@@ -11,4 +11,12 @@ public partial class Customers_ListCustomers : System.Web.UI.Page
     {
 
     }
+
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        int id = Convert.ToInt16(GridView1.SelectedValue);
+        Session["custId"] = id;
+
+        Response.Redirect("~/Customers/AddPet.aspx");
+    }
 }
